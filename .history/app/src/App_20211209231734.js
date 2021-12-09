@@ -34,20 +34,6 @@ const App = () => {
     }
   };
 
-  /* define connect method*/
-  const connectWallet = async () => {};
-
-  /*UI rendered when user isn't connected to dapp*/
-
-  const renderNotConnectedContainer = () => (
-    <button
-    className = 'cta-button connect-wallet-button'
-    onClick={connectWallet}
-    >
-      Connect to Wallet
-    </button>
-  );
-
   /*
    * When our component first mounts, let's check to see if we have a connected
    * Phantom Wallet
