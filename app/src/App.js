@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
 
@@ -7,6 +7,11 @@ const TWITTER_HANDLE = '_buildspace';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
+
+//State
+  const [walletAddress, setWalletAddress] = useState(null);
+
+
   // Actions
 
   /*
@@ -25,6 +30,8 @@ const App = () => {
             'Connected with Public Key:',
             response.publicKey.toString()
           );
+          /*Set pubKey in state to be used later*/
+          setWalletAddress(response.publicKey.toString());
         }
       } else {
         alert('Solana object not found! Get a Phantom Wallet 👻');
@@ -35,7 +42,9 @@ const App = () => {
   };
 
   /* define connect method*/
-  const connectWallet = async () => {};
+  const connectWallet = async () => {
+    
+  };
 
   /*UI rendered when user isn't connected to dapp*/
 
@@ -66,6 +75,10 @@ const App = () => {
         <div className="header-container">
           <p className="header">🍭 Candy Drop</p>
           <p className="sub-text">NFT drop machine with fair mint</p>
+          {/*Render connect wallet BUtton*/ }
+          {renderNotConnectedContainer()}
+          {/* Show this only if we don't have a wallet address */}
+          {!walletAddress && renderNotConnectedContainer()}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
