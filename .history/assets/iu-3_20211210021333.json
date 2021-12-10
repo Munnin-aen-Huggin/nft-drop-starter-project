@@ -1,17 +1,17 @@
 {
-    "name": "bluewhite",
+    "name": "blue cfc",
     "symbol": "",
-    "image": "iu-17.png",
+    "image": "iu-3.png",
     "properties": {
       "files": [
         {
-          "uri": "iu-17.png",
+          "uri": "iu-3.png",
           "type": "image/png"
         }
       ],
       "creators": [
         {
-          "address": "4bQdJ3z4KhE7vjiFebt9AUYH86F8TibSouBJ79v9G3vB",
+          "address": "INSERT_CREATOR_WALLET_ADDRESS_HERE",
           "share": 100
         }
       ]
