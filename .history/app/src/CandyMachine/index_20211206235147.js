@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Connection, PublicKey } from '@solana/web3.js';
 import { Program, Provider, web3 } from '@project-serum/anchor';
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from '@solana/spl-token';
@@ -249,24 +249,6 @@ const CandyMachine = ({ walletAddress }) => {
       data: Buffer.from([]),
     });
   };
-
-  useEffect(() => {
-    getCandyMachineState();
-  }, []);
-
-  const getProvider = () => {
-    const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST;
-    //New connection object 
-    const connection = new Connection(rpcHost);
-
-    //New SOL provider object
-    const provider = new Provider(connectionconnection,
-      window.solana,
-      opts.preflightCommitment
-      );
-      return provider; 
-
-  }
 
   return (
     <div className="machine-container">

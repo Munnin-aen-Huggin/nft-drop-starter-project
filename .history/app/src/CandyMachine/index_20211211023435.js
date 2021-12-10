@@ -254,20 +254,6 @@ const CandyMachine = ({ walletAddress }) => {
     getCandyMachineState();
   }, []);
 
-  const getProvider = () => {
-    const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST;
-    //New connection object 
-    const connection = new Connection(rpcHost);
-
-    //New SOL provider object
-    const provider = new Provider(connectionconnection,
-      window.solana,
-      opts.preflightCommitment
-      );
-      return provider; 
-
-  }
-
   return (
     <div className="machine-container">
       <p>Drop Date:</p>
