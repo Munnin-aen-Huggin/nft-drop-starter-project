@@ -260,13 +260,51 @@ const CandyMachine = ({ walletAddress }) => {
     const connection = new Connection(rpcHost);
 
     //New SOL provider object
-    const provider = new Provider(connectionconnection,
+    const provider = new Provider(
+      connection,
       window.solana,
       opts.preflightCommitment
       );
       return provider; 
 
-  }
+  };
+
+  //Declare candymachinestate as async method
+  const getCandyMachineState = async () => {
+    const provider = getProvider();
+
+    //Get metadata about deployed candy machine program
+    const idl = await Program.fetchIdl(candyMachineProgram, provider);
+
+    //create a program that can be called
+    const program = new Program(idl, candyMachineProgram, provider);
+
+    //Fetch metadata from candy machine program
+    const candyMachine = await program.account.candyMachine.fetch(
+      process.env.REACT_APP_CANDY_MACHINE_ID
+    );
+
+    //PARSE OUT ALL METADATA AND LOG IT OUT
+    const itemsAvailable = candyMachine.data.itemsAvailable.toNumber();
+    const itemsRedeemed = candyMachine.itemsRedeemed.toNumber();
+    const itemsRemaining = itemsAvailable - itemsRedeemed;
+    const goLiveData = candyMachine.data.goLiveDate.toNumber();
+
+    //Used later in UI 
+    const goLiveDateTimeString = `${new Date(
+      goLiveData * 1000
+    ).toLocaleDateString()} @ ${new Date(
+      goLiveData * 1000
+    ).toLocaleTimeString()}`;
+    
+      console.log({
+        itemsAvailable,
+        itemsRedeemed,
+        itemsRemaining,
+        goLiveData,
+        goLiveDateTimeString,
+      });
+  };
 
   return (
     <div className="machine-container">
