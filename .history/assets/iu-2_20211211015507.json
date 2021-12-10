@@ -1,0 +1,19 @@
+{
+    "name": "gold_cfc",
+    "symbol": "",
+    "image": "iu-2.png",
+    "properties": {
+      "files": [
+        {
+          "uri": "iu-2.png",
+          "type": "image/png"
+        }
+      ],
+      "creators": [
+        {
+          "address": "4bQdJ3z4KhE7vjiFebt9AUYH86F8TibSouBJ79v9G3vB",
+          "share": 100
+        }
+      ]
+    }
+}
