@@ -80,8 +80,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">   Eco Warriors NFT Drop🇬🚀 </p>
-          <p className="sub-text">Solana NFT project looking to help restore the environment one NFT at a time. partnered with 
+          <p className="header"> 👑 Eco Warriors NFT Drop🇬🇧</p>
+          <p className="sub-text">#Solana NFT project looking to help restore the environment one NFT at a time. partnered with 
 @THEecoToken
 .</p>
           {/* Show this only if we don't have a wallet address */}
