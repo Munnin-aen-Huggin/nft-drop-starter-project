@@ -397,6 +397,5 @@ const CandyMachine = ({ walletAddress }) => {
       </div>
     )
   );
-};
 
 export default CandyMachine;

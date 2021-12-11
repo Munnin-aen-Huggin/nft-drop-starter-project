@@ -81,7 +81,7 @@ const App = () => {
       <div className="container">
         <div className="header-container">
           <p className="header"> 👑 South London Royalty 🇬🇧</p>
-          <p className="sub-text">♚🟦♔ KTBFFH ♚⬜️♔</p>
+          <p className="sub-text">♚🟦♚ KTBFFH ♔⬜️♔</p>
           {/* Show this only if we don't have a wallet address */}
           {!walletAddress && renderNotConnectedContainer()}
         </div>

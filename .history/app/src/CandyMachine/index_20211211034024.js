@@ -360,40 +360,22 @@ const CandyMachine = ({ walletAddress }) => {
       </div>
     </div>
   );
-  const renderDropTimer = () => {
-    //Get current date and dropdate in JS Date object
-    const currentDate = new Date();
-    const dropDate = new Date(machineStats.goLiveData * 1000);
-
-    //If current date is before drop date, render countdown components
-    if (currentDate < dropDate) {
-      console.log('Before drop date');
-      //Pass over drop date
-      return <CountdownTimer dropDate={dropDate} />;
-    }
-    //Else reurn current drop date
-    return<p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>;
-  };
 
   return (
     machineStats && (
       <div className="machine-container">
-        {renderDropTimer()}
+        <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>
         <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
-          {/* Check to see if these properties are equal! */}
-          {machineStats.itemsRedeemed === machineStats.itemsAvailable ? (
-            <p className="sub-text">Sold Out 🙊</p>
-          ) : (
-            <button
-              className="cta-button mint-button"
-              onClick={mintToken}
-              disabled={isMinting}
-            >
-              Mint NFT
-            </button>
-          )}
-        {mints.length > 0 && renderMintedItems()}
+        <button
+          className="cta-button mint-button"
+          onClick={mintToken}
+          // Add this disabled state and have it listen to isMinting
+          disabled={isMinting}
+        >
+          Mint NFT
+        </button>
         {isLoadingMints && <p>LOADING MINTS...</p>}
+        {mints.length > 0 && renderMintedItems()}
       </div>
     )
   );

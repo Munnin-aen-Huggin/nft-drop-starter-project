@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
 import CandyMachine from './CandyMachine';
+import CountdownTimer from '../CountdownTimer';
 
 // Constants
 const TWITTER_HANDLE = '_buildspace';
@@ -80,8 +81,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header"> 👑 South London Royalty 🇬🇧</p>
-          <p className="sub-text">♚🟦♔ KTBFFH ♚⬜️♔</p>
+          <p className="header">🍭 Candy Drop</p>
+          <p className="sub-text">NFT drop machine with fair mint</p>
           {/* Show this only if we don't have a wallet address */}
           {!walletAddress && renderNotConnectedContainer()}
         </div>
